@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         
         initialSetup()
         addPanGesture(view: fileImageView)
+        addTapGesture(view: trashImageView)
     }
 
     func initialSetup() {
@@ -29,11 +30,23 @@ class ViewController: UIViewController {
         view.bringSubviewToFront(fileImageView)
     }
     
+    func addTapGesture(view: UIView) {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(sender:)))
+        view.addGestureRecognizer(tap)
+    }
+    
     func addPanGesture(view: UIView) {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(ViewController.handlePan(sender:)))
         view.addGestureRecognizer(pan)
     }
 
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        
+        if sender.state == .ended {
+            showAlert(title: "What do you want?", message: "I'm a trash can.")
+        }
+    }
+    
     @objc func handlePan(sender: UIPanGestureRecognizer) {
         let fileView = sender.view!
         
@@ -49,6 +62,13 @@ class ViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let showInfoAC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        showInfoAC.addAction(action)
+        present(showInfoAC, animated: true)
     }
     
     func moveViewWithPan(view: UIView, sender: UIPanGestureRecognizer) {
