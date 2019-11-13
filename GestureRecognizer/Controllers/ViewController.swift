@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     
     var fileViewOrigin:CGPoint!
+    var trashViewOrigin:CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
     func initialSetup() {
         refreshButton.isHidden = true
         fileViewOrigin = fileImageView.frame.origin
+        trashViewOrigin = trashImageView.frame.origin
         view.bringSubviewToFront(fileImageView)
     }
     
@@ -41,14 +43,14 @@ class ViewController: UIViewController {
     }
 
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        
         if sender.state == .ended {
             showAlert(title: "What do you want?", message: "I'm a trash can.")
+            shakeView(view: trashImageView)
         }
     }
     
     @objc func handlePan(sender: UIPanGestureRecognizer) {
-        let fileView = sender.view!
+        guard let fileView = sender.view else { return }
         
         switch sender.state {
         case .began, .changed:
@@ -61,6 +63,23 @@ class ViewController: UIViewController {
             }
         default:
             break
+        }
+    }
+    
+    func shakeView(view: UIView) {
+        UIView.animate(withDuration: 1.0, animations: {
+            view.center.x += 50
+            view.center.y += 25
+        }) { _ in
+            UIView.animate(withDuration: 1.0, animations: {
+                view.center.x -= 30
+                view.center.y -= 20
+            }) { _ in
+                UIView.animate(withDuration: 1.0, animations: {
+                    view.frame.origin = self.trashViewOrigin
+                }, completion: nil)
+
+            }
         }
     }
     
