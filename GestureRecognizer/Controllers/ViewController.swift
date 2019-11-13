@@ -68,12 +68,12 @@ class ViewController: UIViewController {
     
     func shakeView(view: UIView) {
         UIView.animate(withDuration: 1.0, animations: {
-            view.center.x += 50
+            view.center.x -= 50
             view.center.y += 25
         }) { _ in
             UIView.animate(withDuration: 1.0, animations: {
-                view.center.x -= 30
-                view.center.y -= 20
+                view.center.x += 50
+                view.center.y -= 50
             }) { _ in
                 UIView.animate(withDuration: 1.0, animations: {
                     view.frame.origin = self.trashViewOrigin
