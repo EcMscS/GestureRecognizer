@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		594437ED237B4C340098FC32 /* GestureRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		594437ED237B4C340098FC32 /* Gestures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		594437F0237B4C340098FC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		594437F2237B4C340098FC32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		594437F4237B4C340098FC32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		594437EE237B4C340098FC32 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				594437ED237B4C340098FC32 /* GestureRecognizer.app */,
+				594437ED237B4C340098FC32 /* Gestures.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,7 +132,7 @@
 			);
 			name = GestureRecognizer;
 			productName = GestureRecognizer;
-			productReference = 594437ED237B4C340098FC32 /* GestureRecognizer.app */;
+			productReference = 594437ED237B4C340098FC32 /* Gestures.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -340,7 +340,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.talismanmobile.GestureRecognizer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Gestures;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -358,7 +358,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.talismanmobile.GestureRecognizer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Gestures;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

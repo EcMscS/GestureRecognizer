@@ -68,15 +68,13 @@ class ViewController: UIViewController {
     
     func shakeView(view: UIView) {
         UIView.animate(withDuration: 1.0, animations: {
-            view.center.x -= 50
-            view.center.y += 25
+            view.transform = CGAffineTransform(rotationAngle: 25)
         }) { _ in
             UIView.animate(withDuration: 1.0, animations: {
-                view.center.x += 50
-                view.center.y -= 50
+                view.transform = CGAffineTransform(rotationAngle: -25)
             }) { _ in
                 UIView.animate(withDuration: 1.0, animations: {
-                    view.frame.origin = self.trashViewOrigin
+                    view.transform = CGAffineTransform.identity
                 }, completion: nil)
 
             }
